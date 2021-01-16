@@ -1,3 +1,9 @@
+*{
+/*outline: 1px dotted red;*/
+text-align: center;
+}
+
+
 .dato{
     display: inline;
 }
