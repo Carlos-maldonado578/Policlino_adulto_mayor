@@ -1,0 +1,21 @@
+*{outline: 1px dotted red;}
+
+.card{
+    position: relative;
+    display: block;
+    left: 50px;
+    top: 50px;
+    height: 500px;
+}
+.card1{
+    position: relative;
+    left: 650px;
+    height: 200px;
+    bottom: 450px;
+}
+.card2{
+    position: relative;
+    height: 200px;
+    left: 650px;
+    bottom: 350px;
+}
