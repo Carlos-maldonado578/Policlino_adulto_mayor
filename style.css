@@ -1,8 +1,15 @@
 *{outline: 1px dotted red;}
 
+
+.clinic{
+    height: 50px;
+    width: 90px;
+}
+.content{
+    background-color: #ff8256;
+}
 .card{
     position: relative;
-    display: block;
     left: 50px;
     top: 50px;
     height: 500px;
@@ -12,10 +19,25 @@
     left: 650px;
     height: 200px;
     bottom: 450px;
+    background-color: white
 }
 .card2{
     position: relative;
     height: 200px;
     left: 650px;
-    bottom: 350px;
+    bottom: 400px;
+    background-color: white;
+    padding-bottom: 156px;
+}
+.selec{
+    height: 200px;
+    width: 400px;
+    position: relative;
+    left: 650px;
+    bottom: 400px;
+    text-align: center;
+    color: black;
+}
+.elige{
+    display: table-footer-group;
 }
