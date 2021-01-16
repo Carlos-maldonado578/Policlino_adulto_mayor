@@ -55,7 +55,7 @@
             <div class="card-body">
                 <ul>
                     {{#each personas}}
-                        <li>{{nombre}} - {{edad}}</li>
+                        <li>{{nombre}} - {{edad}} - {{person()}}</li>
                     {{/each}}
                 </ul>
             </div>
@@ -90,9 +90,12 @@
         </div>
     </div>
     <script>
-        for (let index = 0; index < personas.length; index++) { 
-        console.log(personas[index].id);
+        function person(personas){
+            for (let index = 0; index < personas.length; index++) { 
+            console.log(personas[index].id);
         }
+        }
+
     </script>
 </body>
 
