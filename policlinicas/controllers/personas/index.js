@@ -81,6 +81,7 @@ exports.index = function(req, res, next) {
     // var personas = listPerson();
     var personas = [
         {
+            id:'7vgucjhnJieClbpMxv6Q',
             direccion: 'Buenos Aires',
             rut: '123456789-0',
             responsables: [
@@ -99,6 +100,7 @@ exports.index = function(req, res, next) {
             telefono: '38011751'
         },
         {
+            id:'VcLfBOlq3S16Y2JRjxnp',
             telefono: '38011751',
             rut: '1234567891-0',
             nombre: 'Pepe Rodriguez',
@@ -108,7 +110,6 @@ exports.index = function(req, res, next) {
             direccion: 'Santiago'
         }
     ]
-    
     res.render('lista', {'personas': personas});
 };
 
