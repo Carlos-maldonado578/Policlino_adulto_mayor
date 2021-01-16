@@ -1,0 +1,29 @@
+{
+  "name": "policlino_adulto_mayor",
+  "version": "1.0.0",
+  "description": "Sistema de notificacion entre policlinicas y pacientes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://edv862@github.com/Carlos-maldonado578/Policlino_adulto_mayor.git"
+  },
+  "keywords": [
+    "weekendcode",
+    "recoders",
+    "policlinicas",
+    "notificaciones",
+    "personas"
+  ],
+  "author": "Carlos Maldonado - Edgar Valderrama - Matias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlos-maldonado578/Policlino_adulto_mayor/issues"
+  },
+  "homepage": "https://github.com/Carlos-maldonado578/Policlino_adulto_mayor#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
