@@ -1,4 +1,6 @@
-
+.dato{
+    display: inline;
+}
 
 
 .clinic{
@@ -6,27 +8,31 @@
     width: 90px;
 }
 .content{
-    background-color: #ff8256;
+    background-color: #e6f3ff;
 }
 .card{
     position: relative;
     left: 50px;
     top: 50px;
     height: 500px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 .card1{
     position: relative;
     left: 650px;
     height: 200px;
     bottom: 450px;
-    background-color: white
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
 }
-.card2{
+.mensaje{
     position: relative;
     height: 200px;
     left: 650px;
     bottom: 400px;
-    background-color: white;
     padding-bottom: 156px;
 }
 .selec{
