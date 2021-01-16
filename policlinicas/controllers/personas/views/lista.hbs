@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>grandparent_message</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
@@ -53,11 +53,15 @@
                 <input type="reset">
             </form>
             <div class="card-body">
-            This is some text within a card body.
+                <ul>
+                    {{#each personas}}
+                        <li>{{nombre}} - {{edad}} - {{person()}}</li>
+                    {{/each}}
+                </ul>
             </div>
         </div>
         <div class="card1" style="width: 25rem;">
-            <h6>Encargado de adulto mayor</h6>
+            <h6>Datos</h6>
             <!-- <form class="dato" action="">
                 <label for="quantity">rut:</label>
                 <input type="number" id="quantity" name="quantity">
@@ -85,7 +89,14 @@
         <p>Mantenga precionado Ctrl (windows) y de click en multiples opciones.</p>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+        function person(personas){
+            for (let index = 0; index < personas.length; index++) { 
+            console.log(personas[index].id);
+        }
+        }
+
+    </script>
 </body>
 
 </html>
