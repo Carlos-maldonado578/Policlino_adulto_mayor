@@ -38,9 +38,6 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
                 </ul>
             </div>
             </div>
@@ -59,13 +56,13 @@
             <div class="card-body">
                 <ul>
                     {{#each personas}}
-                        <li>{{nombre}} - {{edad}}</li>
+                        <li onclick="person('{{id}}')">{{nombre}} - {{edad}}</li>
                     {{/each}}
                 </ul>
             </div>
         </div>
         <div class="card1" style="width: 25rem;">
-            <h6>Encargado de adulto mayor</h6>
+            <h6>Datos</h6>
             <!-- <form class="dato" action="">
                 <label for="quantity">rut:</label>
                 <input type="number" id="quantity" name="quantity">
@@ -93,6 +90,16 @@
         <p>Mantenga precionado Ctrl (windows) y de click en multiples opciones.</p>
         </div>
     </div>
+    <script>
+        function person(id){
+            var personas = [{{personas}}];
+            for (let index = 0; index < personas.length; index++) { 
+            if (personas[index].id == id) {
+                console.log(personas[index]);
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

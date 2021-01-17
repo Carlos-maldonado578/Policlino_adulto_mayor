@@ -138,3 +138,7 @@ exports.createPerson = function(req, res, next) {
         return res.render('crear', {message: "Ocurrio un error..."});
     })   
 }
+
+exports.renderEdit = function(req, res, next){
+    res.render('crear', {})
+}
