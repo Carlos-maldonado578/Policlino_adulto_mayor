@@ -1,0 +1,10 @@
+/* *{
+    outline: 1px dotted red;
+} */
+.content{
+    background-color: #e6f3ff;
+}
+.clinic{
+    height: 50px;
+    width: 90px;
+}
