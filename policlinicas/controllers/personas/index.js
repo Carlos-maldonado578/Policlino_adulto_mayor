@@ -35,11 +35,7 @@ var db = firebase.firestore();
 
 // Listar personas
 const listPerson = () => (
-    db.collection("persona").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            console.log(doc.data());
-        });
-    })
+    db.collection("persona").get()
 )
 
 // Obtener una persona
@@ -70,6 +66,11 @@ const getPersonByRUT = (rut) => (
         })
 )
 
+// Crear persona
+const createPerson = ({...person}) => {
+    return db.collection("persona").add(person);
+}
+
 // Actualizar persona
 
 
@@ -77,42 +78,67 @@ const getPersonByRUT = (rut) => (
 
 
 
-exports.index = function(req, res, next) {
-    // var personas = listPerson();
-    var personas = [
-        {
-            id:'7vgucjhnJieClbpMxv6Q',
-            direccion: 'Buenos Aires',
-            rut: '123456789-0',
-            responsables: [
-            {
-                telefono: '38011751',
-                nombre: 'Rita Chacon',
-                edad: 28,
-                direccion: 'Buenos Aires',
-                correo: 'rita@gmail.com',
-                rut: '123456790-0'
-            }
-            ],
-            edad: 28,
-            correo: 'evalderrama862@gmail.com',
-            nombre: 'Edgar',
-            telefono: '38011751'
-        },
-        {
-            id:'VcLfBOlq3S16Y2JRjxnp',
-            telefono: '38011751',
-            rut: '1234567891-0',
-            nombre: 'Pepe Rodriguez',
-            responsable: [],
-            correo: 'peper@gmail.com',
-            edad: 78,
-            direccion: 'Santiago'
-        }
-    ]
-    res.render('lista', {'personas': personas});
+exports.renderIndex = function(req, res, next) {
+    var personas = listPerson();
+    // var personas = [
+    //     {
+    //         direccion: 'Buenos Aires',
+    //         rut: '123456789-0',
+    //         responsables: [
+    //         {
+    //             telefono: '38011751',
+    //             nombre: 'Rita Chacon',
+    //             edad: 28,
+    //             direccion: 'Buenos Aires',
+    //             correo: 'rita@gmail.com',
+    //             rut: '123456790-0'
+    //         }
+    //         ],
+    //         edad: 28,
+    //         correo: 'evalderrama862@gmail.com',
+    //         nombre: 'Edgar',
+    //         telefono: '38011751'
+    //     },
+    //     {
+    //         telefono: '38011751',
+    //         rut: '1234567891-0',
+    //         nombre: 'Pepe Rodriguez',
+    //         responsable: [],
+    //         correo: 'peper@gmail.com',
+    //         edad: 78,
+    //         direccion: 'Santiago'
+    //     }
+    // ]
+
+    personas.then((querySnapshot) => {
+        var personas = []
+        querySnapshot.forEach((doc) => {
+            personas.push(doc.data())
+        });
+        console.log(personas);
+        res.render('lista', {'personas': personas});
+    })
 };
 
-exports.create = function(req, res, next) {
-    res.render('crear', {'personas': 'as'});
+exports.renderCreate = function(req, res, next) {
+    res.render('crear');
+}
+
+exports.createPerson = function(req, res, next) {
+    var persona = req.body;
+    persona['responsables'] = [];
+    
+    createPerson(req.body)
+    .then((docRef) => {
+        console.log("Person created with ID: ", docRef.id);
+        return res.redirect('/notificaciones');
+    })
+    .catch((error) => {
+        console.log("Error adding document: ", error);
+        return res.render('crear', {message: "Ocurrio un error..."});
+    })   
+}
+
+exports.renderEdit = function(req, res, next){
+    res.render('crear', {})
 }

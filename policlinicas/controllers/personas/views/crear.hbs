@@ -46,7 +46,12 @@
         </nav>
     </div>
     <br><br>
-    <form action="" method="POST">
+
+    {{#if message }}
+        <p class="alert alert-danger">{{ message }}</p>
+    {{/if}}
+
+    <form action="/persona/crear" method="POST">
         <h1 id="titulo">Ingreso de Datos</h1><br>
         <!-- input-->
         <!-- el contenido o nombre dentro del for
@@ -65,8 +70,8 @@
         <label for="telefono">Telefono: </label>
         <input type="telefono" id="tel" name="telefono">
         <br><br>
-        <label for="run">RUT</label>
-        <input type="str" id="run" name="run">
+        <label for="rut">RUT</label>
+        <input type="str" id="rut" name="rut">
         <br><br>
         <label for="edad">EDAD</label>
         <input type="number" id="edad" name="edad">
