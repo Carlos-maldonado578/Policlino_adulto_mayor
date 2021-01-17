@@ -6,7 +6,7 @@ var actividadesController = require('../controllers/actividades');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('eventos/blog');
 });
 
 // Manejo de notificaciones
@@ -24,5 +24,7 @@ router.get('/policlinicas', function(req, res, next){
 
 // Manejo de actividades
 router.get('/actividades', actividadesController.renderIndex);
+router.get('/actividad/crear', actividadesController.renderCreate);
+router.post('/actividad/crear', actividadesController.createActivity);
 
 module.exports = router;

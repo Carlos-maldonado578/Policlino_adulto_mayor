@@ -64,9 +64,10 @@ exports.renderCreate = function(req, res, next) {
     res.render('actividades/crear');
 }
 
-exports.createPerson = function(req, res, next) {
+exports.createActivity = function(req, res, next) {
     var actividad = req.body;
-    
+    actividad['fecha'] = new Date(actividad['fecha']);
+
     createActivity(actividad)
     .then((docRef) => {
         console.log("Activity created with ID: ", docRef.id);
