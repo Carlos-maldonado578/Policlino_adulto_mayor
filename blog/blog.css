@@ -1,8 +1,8 @@
-*{
+/* *{
     outline: 1px dotted red;
-}
-body{
-    background-color: ;
+} */
+.content{
+    background-color: #e6f3ff;
 }
 .clinic{
     height: 50px;
