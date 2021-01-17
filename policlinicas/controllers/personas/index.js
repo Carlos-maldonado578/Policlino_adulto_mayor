@@ -1,8 +1,4 @@
-var express = require('express');
 var firebase = require('firebase');
-
-var app = express()
-app.set('views', __dirname + '/views');
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp({
@@ -116,12 +112,12 @@ exports.renderIndex = function(req, res, next) {
             personas.push(doc.data())
         });
         console.log(personas);
-        res.render('lista', {'personas': personas});
+        res.render('notificaciones/lista', {'personas': personas});
     })
 };
 
 exports.renderCreate = function(req, res, next) {
-    res.render('crear');
+    res.render('personas/crear');
 }
 
 exports.createPerson = function(req, res, next) {
@@ -135,10 +131,10 @@ exports.createPerson = function(req, res, next) {
     })
     .catch((error) => {
         console.log("Error adding document: ", error);
-        return res.render('crear', {message: "Ocurrio un error..."});
+        return res.render('personas/crear', {message: "Ocurrio un error..."});
     })   
 }
 
 exports.renderEdit = function(req, res, next){
-    res.render('crear', {})
+    res.render('personas/crear', {})
 }

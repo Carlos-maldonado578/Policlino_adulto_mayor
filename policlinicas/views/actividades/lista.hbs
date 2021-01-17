@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>grandparent_message</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Policlinica - Actividades</title>
+    <link rel="stylesheet" href="css/inicio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="content">
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -43,49 +43,47 @@
             </div>
         </nav>
     </div>
-    <div class="content"> 
-        <div class="card" style="width: 25rem;">
-            <h6>Adulto Mayor</h6>
-            <form class="dato" action="">
-                <label for="quantity">rut:</label>
-                <input type="number" id="quantity" name="quantity">
-                <input type="submit" value="Buscar">
-                <input type="reset">
-            </form>
-            <div class="card-body">
-            This is some text within a card body.
+    
+    <div class="container-fluid">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Actividades:</h6>
+                            <table class="table table-striped mt-4">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each actividades}}
+                                    <tr>
+                                        <td>{{fecha}}</td>
+                                        <td>{{descripcion}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card1" style="width: 25rem;">
-            <h6>Encargado de adulto mayor</h6>
-            <!-- <form class="dato" action="">
-                <label for="quantity">rut:</label>
-                <input type="number" id="quantity" name="quantity">
-                <input type="submit" value="Buscar">
-                <input type="reset">
-            </form> -->
-            <div class="card-body">
-                This is some text within a card body.
-            </div>
-        </div>
-        <div class="mensaje" style="width: 25rem;">
-            <textarea name="mensaje" id="" cols="48" rows="10"></textarea>
-        </div>
-        <div class="selec">
-        <form ><br><br>
-            <label class="elige" for="cars">Elige una o varias:</label>
-            <select id="cars" name="cars" size="4" multiple>
-                <option value="whatsapp">WhatsApp</option>
-                <option value="telegram">Telegram</option>
-                <option value="sms">SMS</option>
-                <option value="mail">Mail</option>
-            </select><br>
-            <input type="submit">
-        </form>
-        <p>Mantenga precionado Ctrl (windows) y de click en multiples opciones.</p>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script>
+        function person(id){
+            var personas = [{{personas}}];
+            for (let index = 0; index < personas.length; index++) { 
+            if (personas[index].id == id) {
+                console.log(personas[index]);
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

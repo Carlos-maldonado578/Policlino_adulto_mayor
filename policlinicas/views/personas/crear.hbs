@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>grandparent_message</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/crearPersona.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Ingreso adulto mayor y encargado</title>
 </head>
-
 <body>
+    <div class="content">
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -38,54 +37,48 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
                 </ul>
             </div>
             </div>
         </nav>
     </div>
-    <div class="content"> 
-        <div class="card" style="width: 25rem;">
-            <h6>Adulto Mayor</h6>
-            <form class="dato" action="">
-                <label for="quantity">rut:</label>
-                <input type="number" id="quantity" name="quantity">
-                <input type="submit" value="Buscar">
-                <input type="reset">
-            </form>
-            <div class="card-body">
-            This is some text within a card body.
-            </div>
-        </div>
-        <div class="card1" style="width: 25rem;">
-            <h6>Encargado de adulto mayor</h6>
-            <!-- <form class="dato" action="">
-                <label for="quantity">rut:</label>
-                <input type="number" id="quantity" name="quantity">
-                <input type="submit" value="Buscar">
-                <input type="reset">
-            </form> -->
-            <div class="card-body">
-                This is some text within a card body.
-            </div>
-        </div>
-        <div class="mensaje" style="width: 25rem;">
-            <textarea name="mensaje" id="" cols="48" rows="10"></textarea>
-        </div>
-        <div class="selec">
-        <form ><br><br>
-            <label class="elige" for="cars">Elige una o varias:</label>
-            <select id="cars" name="cars" size="4" multiple>
-                <option value="whatsapp">WhatsApp</option>
-                <option value="telegram">Telegram</option>
-                <option value="sms">SMS</option>
-                <option value="mail">Mail</option>
-            </select><br>
-            <input type="submit">
-        </form>
-        <p>Mantenga precionado Ctrl (windows) y de click en multiples opciones.</p>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-</body>
+    <br><br>
 
+    {{#if message }}
+        <p class="alert alert-danger">{{ message }}</p>
+    {{/if}}
+
+    <form action="/persona/crear" method="POST">
+        <h1 id="titulo">Ingreso de Datos</h1><br>
+        <!-- input-->
+        <!-- el contenido o nombre dentro del for
+        debe ser igual al del "id" del input-->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br><br>
+        <!-- no se pueden repetir los nombres dentro 
+        de los id de cualquier elemento html-->
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="apellido">
+        <br><br>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo">
+        <br><br>
+        <label for="telefono">Telefono: </label>
+        <input type="telefono" id="tel" name="telefono">
+        <br><br>
+        <label for="rut">RUT</label>
+        <input type="str" id="rut" name="rut">
+        <br><br>
+        <label for="edad">EDAD</label>
+        <input type="number" id="edad" name="edad">
+        <br>
+        <br>
+        <input type="submit" value="Ingresar"><br>
+    </form>
+</div>
+</body>
 </html>

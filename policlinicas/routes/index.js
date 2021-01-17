@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var personasController = require('../controllers/personas');
+var actividadesController = require('../controllers/actividades');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,8 +23,6 @@ router.get('/policlinicas', function(req, res, next){
 });
 
 // Manejo de actividades
-router.get('/actividades', function(req, res, next){
-  res.send("A response with resources for activities");
-});
+router.get('/actividades', actividadesController.renderIndex);
 
 module.exports = router;
