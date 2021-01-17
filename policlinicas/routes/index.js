@@ -9,10 +9,12 @@ router.get('/', function(req, res, next) {
 });
 
 // Manejo de notificaciones
-router.get('/notificaciones', personasController.index);
+router.get('/notificaciones', personasController.renderIndex);
 
 // Crear persona
-router.get('/persona/crear', personasController.create);
+router.get('/persona/:id', personasController.renderCreate);
+router.get('/persona/crear', personasController.renderCreate);
+router.post('/persona/crear', personasController.createPerson);
 
 // Manejo de policlinicas
 router.get('/policlinicas', function(req, res, next){
