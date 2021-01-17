@@ -111,7 +111,6 @@ exports.renderIndex = function(req, res, next) {
         querySnapshot.forEach((doc) => {
             personas.push(doc.data())
         });
-        console.log(personas);
         res.render('notificaciones/lista', {'personas': personas});
     })
 };
