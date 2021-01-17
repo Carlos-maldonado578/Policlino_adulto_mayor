@@ -1,55 +1,43 @@
-*{
-    /*outline: 1px dotted red;*/
+.dato{
+    display: inline;
+}
+
+
+.clinic{
+    height: 50px;
+    width: 90px;
+}
+.content{
+    background-color: #e6f3ff;
+
+}
+.card{
+    position: relative;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.card1{
+    position: relative;
+    height: 200px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.mensaje{
+    position: relative;
+    height: 200px;
+    padding-bottom: 156px;
+}
+.selec{
+    height: 200px;
+    width: 400px;
+    position: relative;
     text-align: center;
-    }
-    
-    
-    .dato{
-        display: inline;
-    }
-    
-    
-    .clinic{
-        height: 50px;
-        width: 90px;
-    }
-    .content{
-        background-color: #e6f3ff;
-    }
-    .card{
-        position: relative;
-        left: 50px;
-        top: 50px;
-        height: 500px;
-        border: 2px solid white;
-        border-radius: 10px;
-        box-sizing: border-box;
-    }
-    .card1{
-        position: relative;
-        left: 650px;
-        height: 200px;
-        bottom: 450px;
-        background-color: white;
-        border: 2px solid white;
-        border-radius: 10px;
-    }
-    .mensaje{
-        position: relative;
-        height: 200px;
-        left: 650px;
-        bottom: 400px;
-        padding-bottom: 156px;
-    }
-    .selec{
-        height: 200px;
-        width: 400px;
-        position: relative;
-        left: 650px;
-        bottom: 400px;
-        text-align: center;
-        color: black;
-    }
-    .elige{
-        display: table-footer-group;
-    }
+    color: black;
+}
+.elige{
+    display: table-footer-group;
+}

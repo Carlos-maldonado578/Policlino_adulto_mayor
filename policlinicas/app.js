@@ -16,7 +16,7 @@ app.engine('.hbs', exphbs({extname: '.hbs', defaultLayout: "", layoutsDir: "",})
 app.set('view engine', 'hbs');
 
 // TODO: generalizar para que busque en cada carpeta views del controlador
-app.set('views', __dirname + '/controllers/personas/views');
+app.set('views', __dirname + '/views');
 
 app.use(logger('dev'));
 app.use(express.json());

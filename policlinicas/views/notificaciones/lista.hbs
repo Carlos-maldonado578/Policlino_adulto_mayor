@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policlinica - Adultos Mayores</title>
+    <link rel="stylesheet" href="css/inicio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body class="content">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/notificaciones">
+                    <img class="clinic" src="https://www.blog.saludonline.cl/wp-content/uploads/2010/06/hospitales-y-consultorios-en-las-condes-564x270.gif" alt="logo">
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/notificaciones">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/actividades">Actividades</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Calendario
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="pt-5">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Adultos Mayores:</h6>
+                            <form class="form-group" action="">
+                                <input class="form-control mb-2" type="number" id="rut" name="rut" placeholder="Buscar por RUT">
+                                <input value="Buscar" class="w-25 btn btn-primary">
+                                <input type="reset" class="w-25 btn btn-secondary">
+                            </form>
+                            <table class="table table-hover mt-4">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Direccion</th>
+                                        <th scope="col">Edad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each personas}}
+                                    <tr>
+                                        <td>{{nombre}}</td>
+                                        <td>{{direccion}}</td>
+                                        <td>{{edad}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="card1">
+                        <h6>Datos</h6>
+                        <div class="card-body">
+                            This is some text within a card body.
+                        </div>
+                    </div>
+
+                    <form class="mt-3">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="elige" for="messageOption">Enviar mensaje a través de alguno de estos medios:</label>
+                                    <select class="form-control" id="messageOption" name="messageOption" size="4" multiple>
+                                        <option value="whatsapp">WhatsApp</option>
+                                        <option value="telegram">Telegram</option>
+                                        <option value="sms">SMS</option>
+                                        <option value="mail">Mail</option>
+                                    </select>
+                                    <small>Ctrl + click para seleccionar varios.</small>
+                                </div>
+                                <div class="col-8">
+                                    <div class="mensaje">
+                                        <textarea class="form-control" placeholder="Escribe aca el mensaje a enviar..." name="message" id="message" rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function person(id){
+            var personas = [{{personas}}];
+            for (let index = 0; index < personas.length; index++) { 
+            if (personas[index].id == id) {
+                console.log(personas[index]);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
