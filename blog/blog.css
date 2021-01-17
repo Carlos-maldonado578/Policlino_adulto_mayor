@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 *{
     outline: 1px dotted red;
 }
 
+=======
+/* *{
+    outline: 1px dotted red;
+} */
+.content{
+    background-color: #e6f3ff;
+}
+>>>>>>> feature/node-express-setup
 .clinic{
     height: 50px;
     width: 90px;

@@ -55,7 +55,7 @@
             <div class="card-body">
                 <ul>
                     {{#each personas}}
-                        <li>{{nombre}} - {{edad}} - {{person()}}</li>
+                        <li onclick="person('{{id}}')">{{nombre}} - {{edad}}</li>
                     {{/each}}
                 </ul>
             </div>
@@ -90,12 +90,14 @@
         </div>
     </div>
     <script>
-        function person(personas){
+        function person(id){
+            var personas = [{{personas}}];
             for (let index = 0; index < personas.length; index++) { 
-            console.log(personas[index].id);
+            if (personas[index].id == id) {
+                console.log(personas[index]);
+                }
+            }
         }
-        }
-
     </script>
 </body>
 
